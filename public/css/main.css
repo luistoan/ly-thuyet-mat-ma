@@ -476,4 +476,6 @@ iframe {
 }
 
 
-
+.limiter .container-login100 {
+  background-image: url('../images/bg-01.jpg')!important;
+}
