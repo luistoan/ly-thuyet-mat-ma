@@ -66,3 +66,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Server requirement
+ - Khởi động mysql server ( open xampp, click open first 3 options)
+ - Khởi động server ( node server.js)
