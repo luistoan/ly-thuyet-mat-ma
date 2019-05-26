@@ -69,4 +69,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### Server requirement
  - Khởi động mysql server ( open xampp, click open first 3 options)
- - Khởi động server ( node server.js)
+ - Khởi động server ( cmd: node server.js)
+
+### Xem database
+    - mở trình duyệt, truy cập localhost:81/phpmyadmin
