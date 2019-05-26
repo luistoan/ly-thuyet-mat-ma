@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from "axios"
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+import  { Link } from 'react-router-dom'
 
 class Login extends Component {
 
@@ -40,10 +41,13 @@ class Login extends Component {
         }
 
         axios.post('http://localhost:8080/api/login', {username, password}, config).then(success => {
-            console.log("success: ", success)
-            toast("login success!")
+            if(success.data && success.data.status) {
+                toast.success("Login successful!")
+            } else {
+                toast.error("Username or password is wrong!")
+            }
         }, error => {
-            toast("login failed!")
+            toast("Server Error!")
         })
         console.log(username, password)
     }
@@ -67,13 +71,16 @@ class Login extends Component {
                                 <input className="input100" type="password" onChange={this.onChangeValue.bind(this)} name="pass" placeholder="Password"/>
                                 <span className="focus-input100" data-placeholder="&#xe80f;"></span>
                             </div>
+
+                            <div style={{textAlign: "center"}}>
+                                <Link to="/register">Go to Register</Link>
+                            </div>
         
                             <div className="container-login100-form-btn m-t-32">
                                 <button className="login100-form-btn" onClick={this.login.bind(this)}>
                                     Login
                                 </button>
                             </div>
-                            <ToastContainer />
                         </div>
                     </div>
                 </div>

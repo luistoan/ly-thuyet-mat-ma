@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 import Login from './components/Login'
 import Register from './components/Register'
@@ -8,6 +9,7 @@ import Register from './components/Register'
 class App extends Component {
 
     render() {
+        
         return (
             <div>
                 <BrowserRouter>
@@ -16,6 +18,7 @@ class App extends Component {
                         <Route exact path='/register' component={Register}/>
                     </Switch>
                 </BrowserRouter>
+                <ToastContainer />
             </div>
         );
   }

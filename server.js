@@ -97,11 +97,18 @@ app.post('/api/users', function(req, res) {
   
   const sql = `insert into users(username, password, private_key) values ('${username}', '${hashPass}', '${private_key}')`
   con.query(sql, function(err, results) {
-    if (err) throw err;
-    res.json({
-      message: "create ok",
-      data: results
-    })
+    if (err) {
+      res.json({
+        message: "user already existed!",
+        status: 0
+      })
+    } else {
+      res.json({
+        message: "create ok",
+        data: results,
+        status: 1
+      })
+    }
   })
 })
 
